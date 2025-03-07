@@ -95,6 +95,7 @@
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 15px;
+        border: 2px solid var(--spotify-green); /* Restored static green border */
         position: relative; /* Added for pseudo-element positioning */
     }
 
@@ -105,24 +106,28 @@
         left: 0;
         width: 100%;
         height: 100%;
-        border: 2px dashed var(--spotify-green);
+        border: 1px solid #C0C0C0; /* Silver lining */
         border-radius: 4px;
-        animation: borderSlide 4s linear infinite;
-        box-sizing: border-box; /* Ensures border fits within dimensions */
+        box-sizing: border-box;
+        animation: silverSlide 4s linear infinite;
+        z-index: 1; /* Ensures it layers over the green border */
     }
 
-    @keyframes borderSlide {
+    @keyframes silverSlide {
         0% {
-            transform: translateX(0);
-            border-style: dashed;
+            transform: translateX(0) translateY(0);
+        }
+        25% {
+            transform: translateX(100%) translateY(0);
         }
         50% {
-            transform: translateX(100%);
-            border-style: dashed;
+            transform: translateX(100%) translateY(100%);
+        }
+        75% {
+            transform: translateX(0) translateY(100%);
         }
         100% {
-            transform: translateX(0);
-            border-style: dashed;
+            transform: translateX(0) translateY(0);
         }
     }
 
