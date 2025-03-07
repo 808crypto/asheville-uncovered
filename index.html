@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asheville Uncovered</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spotify-black: #121212;
+            --spotify-dark: #181818;
+            --spotify-green: #1DB954;
+            --spotify-light: #282828;
+        }
+
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: var(--spotify-black);
+        }
+
+        /* Header Section */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('https://images.pexels.com/photos/12524257/pexels-photo-12524257.jpeg') no-repeat center center/cover;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(29, 185, 84, 0.3);
+        }
+
+        .tagline {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hidden Gems Section */
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .card {
+            width: 300px;
+            min-height: 400px;
+            background: var(--spotify-dark);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 2px solid var(--spotify-green);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin: 0 0 10px;
+            color: var(--spotify-green);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #eaeaea;
+            flex: 1;
+        }
+
+        /* Whats On Section */
+        .event-calendar {
+            background: var(--spotify-light);
+            width: 100%;
+            max-width: 600px;
+            height: 200px;
+            margin: 40px auto;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .event-calendar p {
+            font-size: 18px;
+            color: var(--spotify-green);
+            text-align: center;
+        }
+
+        /* Add Your Find Section */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: var(--spotify-dark);
+            border: 2px solid var(--spotify-green);
+            border-radius: 4px;
+            color: white;
+        }
+
+        .form-container button {
+            background: var(--spotify-green);
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .form-container button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header {
+                height: 300px;
+            }
+
+            .tagline {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="tagline">Discover the Real Asheville</div>
+    </div>
+
+    <!-- Hidden Gems Section -->
+    <div class="container">
+        <h2 style="color: var(--spotify-green); text-align: center; margin: 40px 0;">Hidden Gems</h2>
+        <div class="cards-container">
+            <!-- Place 1 -->
+            <div class="card">
+                <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Blue Ridge Overlook">
+                <h3>The Blue Ridge Overlook</h3>
+                <p>Tucked along the Blue Ridge Parkway just south of Asheville, this overlook offers a stunning view of rolling mountains and a quiet spot to breathe...</p>
+            </div>
+            
+            <!-- Place 2 -->
+            <div class="card">
+                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg" alt="River Arts Café">
+                <h3>River Arts Café</h3>
+                <p>Nestled in Asheville’s River Arts District, this tiny café serves killer coffee and homemade scones in a converted warehouse...</p>
+            </div>
+            
+            <!-- Place 3 -->
+            <div class="card">
+                <img src="https://images.pexels.com/photos/265158/pexels-photo-265158.jpeg" alt="Vintage Vault">
+                <h3>Vintage Vault</h3>
+                <p>On Lexington Avenue in downtown Asheville, this shop is a treasure trove of retro clothes, vinyl records, and odd antiques...</p>
+            </div>
+        </div>
+
+        <!-- Whats On Section -->
+        <div class="event-calendar">
+            <p>Event Calendar Coming Soon</p>
+        </div>
+
+        <!-- Add Your Find Section -->
+        <div class="form-container">
+            <h2 style="color: var(--spotify-green); text-align: center; margin: 40px 0;">Add Your Find</h2>
+            <input type="text" placeholder="Name of Spot">
+            <textarea placeholder="Description" rows="4"></textarea>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
