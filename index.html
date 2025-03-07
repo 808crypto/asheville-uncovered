@@ -195,6 +195,70 @@
         transform: scale(1.05);
     }
 
+    /* FAQ Section */
+    .faq-section {
+        max-width: 600px;
+        margin: 40px auto;
+        background: var(--spotify-dark);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .faq-section h2 {
+        color: var(--spotify-green);
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Bebas Neue', Arial, sans-serif;
+        font-size: 32px;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+    }
+
+    .faq-item summary {
+        color: #eaeaea;
+        font-size: 18px;
+        padding: 10px;
+        cursor: pointer;
+        background: var(--spotify-light);
+        border-radius: 4px;
+    }
+
+    .faq-item p {
+        color: #eaeaea;
+        font-size: 14px;
+        padding: 10px;
+        background: var(--spotify-dark);
+        margin-top: -5px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--spotify-light);
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .footer p {
+        color: var(--spotify-green);
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .footer a {
+        color: var(--spotify-green);
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
         .cards-container {
@@ -208,6 +272,10 @@
 
         .tagline {
             font-size: 36px;
+        }
+
+        .faq-section {
+            padding: 15px;
         }
     }
 </style>
@@ -255,6 +323,34 @@
         <input type="text" placeholder="Name of Spot">
         <textarea placeholder="Description" rows="4"></textarea>
         <button type="submit" onclick="alert('Thank you for your submission!'); return false;">Submit</button>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <details>
+                <summary>What is Asheville Uncovered?</summary>
+                <p>Asheville Uncovered is a platform to discover and share hidden gems in Asheville, NC, featuring local spots like overlooks, cafés, and vintage shops.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>How can I add my own find?</summary>
+                <p>Simply use the 'Add Your Find' form above, enter the name and description of your spot, and submit it to share with the community.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>Is the event calendar live?</summary>
+                <p>Not yet! The event calendar is coming soon, so stay tuned for updates on local happenings.</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Asheville Uncovered | <a href="mailto:contact@ashevilleuncovered.com">Contact Us</a></p>
     </div>
 </div>
 
