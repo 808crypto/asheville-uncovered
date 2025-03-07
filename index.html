@@ -83,6 +83,34 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        position: relative; /* Added for pseudo-element positioning */
+        overflow: hidden; /* Ensures gradient stays within card bounds */
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, var(--spotify-green), var(--spotify-green), var(--spotify-green));
+        background-size: 400% 400%;
+        z-index: -1;
+        border-radius: 8px;
+        animation: gradientFlow 6s ease infinite;
+    }
+
+    @keyframes gradientFlow {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
     }
 
     .card:hover {
