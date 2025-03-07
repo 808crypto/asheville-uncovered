@@ -29,7 +29,8 @@
         background: url('https://images.pexels.com/photos/12524257/pexels-photo-12524257.jpeg') no-repeat center center/cover;
     }
 
-    .header::before {
+    /* Removed .header::before to eliminate green filter */
+    /* .header::before {
         content: '';
         position: absolute;
         top: 0;
@@ -37,7 +38,7 @@
         width: 100%;
         height: 100%;
         background: rgba(29, 185, 84, 0.3);
-    }
+    } */
 
     .tagline {
         position: absolute;
@@ -95,8 +96,8 @@
         object-fit: cover;
         border-radius: 4px;
         margin-bottom: 15px;
-        border: 2px solid var(--spotify-green); /* Restored static green border */
-        position: relative; /* Added for pseudo-element positioning */
+        border: 2px solid var(--spotify-green);
+        position: relative;
     }
 
     .card img::before {
@@ -106,11 +107,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        border: 1px solid #C0C0C0; /* Silver lining */
+        border: 1px solid #C0C0C0;
         border-radius: 4px;
         box-sizing: border-box;
         animation: silverSlide 4s linear infinite;
-        z-index: 1; /* Ensures it layers over the green border */
+        z-index: 1;
     }
 
     @keyframes silverSlide {
@@ -350,7 +351,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2025 Asheville Uncovered | <a href="mailto:contact@ashevilleuncovered.com">Contact Us</a></p>
+        <p>© 2025 Asheville Uncovered | <a href="mailto:contact@ashevilleuncovered.com">Contact Us</a></p>
     </div>
 </div>
 
