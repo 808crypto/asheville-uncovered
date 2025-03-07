@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover hidden gems in Asheville, NC with Asheville Uncovered. Explore local spots like the Blue Ridge Overlook and more!">
     <title>Asheville Uncovered</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --spotify-black: #121212;
@@ -45,9 +46,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-family: 'Bebas Neue', Arial, sans-serif;
-            font-size: 48px;
-            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 96px;
+            font-weight: 700;
             letter-spacing: -1px;
             text-align: center;
             color: rgba(255, 255, 255, 0.9);
@@ -84,6 +85,34 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--spotify-green), var(--spotify-green), var(--spotify-green));
+            background-size: 400% 400%;
+            z-index: -1;
+            border-radius: 8px;
+            animation: gradientFlow 6s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
         }
 
         .card:hover {
@@ -109,6 +138,30 @@
             font-size: 14px;
             color: #eaeaea;
             flex: 1;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #eaeaea;
+            flex: 1;
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .read-more {
+            color: var(--spotify-green);
+            cursor: pointer;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .card-text.expanded {
+            max-height: 1000px;
         }
 
         /* Whats On Section */
@@ -175,7 +228,7 @@
             }
 
             .tagline {
-                font-size: 36px;
+                font-size: 72px; /* Adjusted for mobile readability */
             }
         }
     </style>
@@ -183,7 +236,7 @@
 <body>
     <!-- Header Section -->
     <div class="header">
-        <div class="tagline">Discover the Real Asheville</div>
+        <div class="tagline">Explore Authentic Hidden Gems in Discover the Real Asheville</div>
     </div>
 
     <!-- Hidden Gems Section -->
@@ -192,23 +245,23 @@
         <div class="cards-container">
             <!-- Place 1 -->
             <div class="card">
-                <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Blue Ridge Overlook">
+                <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Scenic view of Blue Ridge Overlook near Asheville">
                 <h3>The Blue Ridge Overlook</h3>
-                <p>Tucked along the Blue Ridge Parkway just south of Asheville, this overlook offers a stunning view of rolling mountains and a quiet spot to breathe...</p>
+                <p class="card-text">Tucked along the Blue Ridge Parkway just south of Asheville, this overlook offers a stunning view of rolling mountains and a quiet spot to breathe. It’s special because it’s less crowded than the big tourist stops, with a short trail to a hidden bench. I love it for sunset picnics; it’s where I proposed to my partner last fall. <span class="read-more">Read More</span></p>
             </div>
             
             <!-- Place 2 -->
             <div class="card">
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg" alt="River Arts Café">
+                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg" alt="Cozy interior of River Arts Café in Asheville">
                 <h3>River Arts Café</h3>
-                <p>Nestled in Asheville’s River Arts District, this tiny café serves killer coffee and homemade scones in a converted warehouse...</p>
+                <p class="card-text">Nestled in Asheville’s River Arts District, this tiny café serves killer coffee and homemade scones in a converted warehouse. The vibe is artsy and chill, with local paintings on the walls and baristas who know your name. I found it on a rainy day sketching trip and now it’s my go-to creative spot. <span class="read-more">Read More</span></p>
             </div>
             
             <!-- Place 3 -->
             <div class="card">
-                <img src="https://images.pexels.com/photos/265158/pexels-photo-265158.jpeg" alt="Vintage Vault">
+                <img src="https://images.pexels.com/photos/265158/pexels-photo-265158.jpeg" alt="Vintage Vault shop interior in downtown Asheville">
                 <h3>Vintage Vault</h3>
-                <p>On Lexington Avenue in downtown Asheville, this shop is a treasure trove of retro clothes, vinyl records, and odd antiques...</p>
+                <p class="card-text">On Lexington Avenue in downtown Asheville, this shop is a treasure trove of retro clothes, vinyl records, and odd antiques. It’s run by a quirky couple who’ll chat your ear off about the 70s punk scene. I scored a leather jacket there that’s been my winter staple for years. <span class="read-more">Read More</span></p>
             </div>
         </div>
 
@@ -222,8 +275,18 @@
             <h2 style="color: var(--spotify-green); text-align: center; margin: 40px 0;">Add Your Find</h2>
             <input type="text" placeholder="Name of Spot">
             <textarea placeholder="Description" rows="4"></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="alert('Thank you for your submission!'); return false;">Submit</button>
         </div>
     </div>
+
+    <script>
+    document.querySelectorAll('.read-more').forEach(item => {
+        item.addEventListener('click', function() {
+            const text = this.previousElementSibling;
+            text.classList.toggle('expanded');
+            this.textContent = text.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        });
+    });
+    </script>
 </body>
 </html>
